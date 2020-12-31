@@ -104,10 +104,10 @@ function showSlides() {
 <----------------------------------------------------->
 */
 
-images.push("images/relumbra.jpg");
-images.push("images/desarrollo.jpg");
-images.push("images/wayyu.jpg");
-images.push("images/animation.gif");
+images.push("Images/relumbra.jpg");
+images.push("Images/desarrollo.jpg");
+images.push("Images/wayyu.jpg");
+images.push("Images/animation.gif");
 
 function ImageChange(){
   for(let i = 0; i < circles.length; i++){
