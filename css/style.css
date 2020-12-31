@@ -1,0 +1,493 @@
+/*
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Righteous', cursive;
+*/
+
+/*
+<----------------------------------------------------->
+  Variables
+<----------------------------------------------------->
+*/
+/*  Colors  */
+:root{
+  --color1: #0477BF;
+  --color2: #428C0D;
+  --color3: #F2CB05;
+  --color4: #F24444;
+  --color5: #0388A6;
+  --dark: #1a1a1a;
+  --light: #ebebeb;
+}
+/*  Selection Circles */
+:root{
+  --cantidad: 4;
+  --radio: 25rem;
+  --miniRadio: 10rem;
+  --angulo: calc(360deg / var(--cantidad));
+  --separacion: 19em;
+}
+
+/**/
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Righteous', cursive;
+  margin: 0;
+}
+body{
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--light);
+}
+a, a:hover, a:focus, a:active {
+text-decoration: none;
+color: inherit;
+} 
+
+/*
+<----------------------------------------------------->
+  Cabecera
+<----------------------------------------------------->
+*/
+
+header{
+  height: 60vh;
+  background-size: 110%;
+  transition: all .1s;
+  background-image: url("../Images/buho.jpg");
+  background-position: center;
+  position: relative;
+}
+#headBack{
+  position: absolute;
+  min-width: 110%;
+  min-height: 100%;
+}
+.slide {
+  position: absolute;
+  max-width: 100%;
+}
+.slide img{
+  max-height: 60%;
+  height: 40vh;
+}
+
+
+/*
+<----------------------------------------------------->
+  Selection Circles
+<----------------------------------------------------->
+*/
+
+#habilities{
+  padding: 10rem 0;
+  margin: 2%;
+}
+.circle {
+  border-radius: 50%;
+  width: var(--miniRadio);
+  height: var(--miniRadio);
+  background-color: var(--color5);
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  transition: all .2s linear;
+}
+.circle:hover{
+  width: calc(var(--miniRadio)*1.2);
+  height: calc(var(--miniRadio)*1.2);
+  top: calc(50% - (var(--miniRadio)*1.2/2));
+  left: calc(50% - (var(--miniRadio)*1.2/2));
+}
+.circle-selected{
+  box-shadow: .2rem 0 5px var(--color3), 0 .2rem 5px var(--color3),
+   -.2rem 0 5px var(--color3), 0 -.2rem 5px var(--color3);
+}
+#big-circle {
+  border-radius: 50%;
+  width: var(--radio);
+  height: var(--radio);
+  display: inline-block;
+  position: relative;
+  background-image: url("../Images/relumbra.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s;
+}
+#transition{
+  border-radius: 50%;
+  width: var(--radio);
+  height: var(--radio);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+@media only screen and (max-width: 820px) {
+  .circle{
+    display: none !important;
+  }
+  #habilities{
+    padding: 1rem 0;
+  }
+}
+
+.one {
+  background-color: var(--color5);
+  /*left: calc(50% - (var(--miniRadio)/2));
+  top: calc(-1.2 * (var(--miniRadio)));*/
+  top: calc(50% - (var(--miniRadio)/2));
+  left: calc(50% - (var(--miniRadio)/2));
+  transform: rotate(calc(var(--angulo)*0)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*0));
+  animation: girar1 30s infinite linear;
+}
+.two {
+  background-color: var(--color2);
+  /*top: calc(50% - (var(--miniRadio)/2));
+  right: calc(-1.2 * (var(--miniRadio)));*/
+  top: calc(50% - (var(--miniRadio)/2));
+  left: calc(50% - (var(--miniRadio)/2));
+  transform: rotate(calc(var(--angulo)*1)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*1));
+  animation: girar2 30s infinite linear;
+}
+.three {
+  background-color: var(--color1);
+  /*left: calc(50% - (var(--miniRadio)/2));
+  bottom: calc(-1.2 * (var(--miniRadio)));*/
+  top: calc(50% - (var(--miniRadio)/2));
+  left: calc(50% - (var(--miniRadio)/2));
+  transform: rotate(calc(var(--angulo)*2)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*2));
+  animation: girar3 30s infinite linear;
+}
+.four {
+  background-color: var(--color4);
+  /*top: calc(50% - (var(--miniRadio)/2));
+  left: calc(-1.2 * (var(--miniRadio)));*/
+  top: calc(50% - (var(--miniRadio)/2));
+  left: calc(50% - (var(--miniRadio)/2));
+  transform: rotate(calc(var(--angulo)*3)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*3));
+  animation: girar4 30s infinite linear;
+}
+
+/*  Circles Rotation Animation  */
+@keyframes girar1 {
+  from {transform: rotate(calc(var(--angulo)*0)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*0));}
+  to {transform: rotate(calc(var(--angulo)*0 + 360deg)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*0 - 360deg));}
+}
+@keyframes girar2 {
+  from {transform: rotate(calc(var(--angulo)*1)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*1));}
+  to {transform: rotate(calc(var(--angulo)*1 + 360deg)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*1 - 360deg));}
+}
+@keyframes girar3 {
+  from {transform: rotate(calc(var(--angulo)*2)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*2));}
+  to {transform: rotate(calc(var(--angulo)*2 + 360deg)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*2 - 360deg));}
+}
+@keyframes girar4 {
+  from {transform: rotate(calc(var(--angulo)*3)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*3));}
+  to {transform: rotate(calc(var(--angulo)*3 + 360deg)) translate(var(--separacion)) rotate(calc(-1 * var(--angulo)*3 - 360deg));}
+}
+
+/*
+<----------------------------------------------------->
+  Presentation
+<----------------------------------------------------->
+*/
+
+.intro{
+    padding: 10%;
+    font-size: 1.7rem;
+}
+@media only screen and (max-width: 768px) {
+  .intro{
+    font-size: 1rem;
+  }
+}
+
+/*
+<----------------------------------------------------->
+  Video Reel
+<----------------------------------------------------->
+*/
+
+.fullVideo iframe{
+    width: 100%;
+    height: calc(100vw * 0.5625);
+    
+}
+
+.bg-azul{
+    background-color: #3854A6;
+}
+
+/*
+<----------------------------------------------------->
+  Education
+<----------------------------------------------------->
+*/
+
+.circle2{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    display: flex;
+    background-color: #3854A6;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+.estudios img{
+    width: 5rem;
+}
+.estudios{
+    padding: 10% 0;
+}
+
+/*
+<----------------------------------------------------->
+  Software & programming languages
+<----------------------------------------------------->
+*/
+
+#programas{
+  margin: 4rem auto;
+}
+.logito{
+  width: 15vh;
+  height: 15vh;
+  display: inline-block;
+  border-radius: .5rem;
+  filter:grayscale();
+  position: relative;
+  transition: all .2s;
+  z-index: 0;
+  margin-bottom: 8rem;
+  margin: 2rem 2rem 6rem 2rem;
+}
+.logito:hover{
+  transform: scale(1.2);
+  filter: none;
+}
+.logito .Extra{
+  position: absolute;
+  background-color: var(--dark);
+  color: var(--light);
+  border-radius: 1rem;
+  width: 15rem;
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5% 10% 0 10%;
+  font-size: 70%;
+  transition: all 1s;
+  z-index: 20;
+  line-height: normal;
+}
+.logito:hover .Extra{
+  opacity: .8;
+  display: block;
+  top: 110%;
+  z-index: 30;
+}
+
+@media only screen and (max-width: 768px) {
+  .logito{
+    width: 100%;
+    height: calc(100% + 1rem);
+    padding: 3%;
+    margin: 3% 6%;
+  }
+  .logito:hover{
+    transform: scale(1.1);
+  }
+  .logito .Extra{
+    position: relative;
+    display: block;
+    transform: none;
+    left: inherit;
+    width: 100%;
+  }
+  .logito:hover .Extra{
+    top: inherit;
+  }
+}
+
+.logito:nth-child(1):hover{
+  background-color: #e44d26;
+  color: #fff;
+}
+.logito:nth-child(2):hover{
+  background-color: #1774b7;
+  color: #fff;
+}
+.logito:nth-child(3):hover{
+  background-color: #f7df1e;
+}
+.logito:nth-child(4):hover{
+  background-color: #001e36;
+  color: #31a8ff;
+}
+.logito:nth-child(5):hover{
+  background-color: #330000;
+  color: #ff9a00;
+}
+.logito:nth-child(6):hover{
+  background-color: #181657;
+  color: #d19ffe;
+}
+.logito:nth-child(7):hover{
+  background-color: #30053b;
+  color: #d955ff;
+}
+.logito:nth-child(8):hover{
+  background-color: #182a2e;
+  color: #65a6a8;
+}
+.logito:nth-child(9):hover{
+  background-color: #e87d0d;
+  color: #265787; 
+}
+.logito:nth-child(10):hover{
+  color: #222c37;
+}
+.logito:nth-child(11):hover{
+  background-color: #659ad2;
+  color: #fff;
+}
+
+/*
+<----------------------------------------------------->
+  Proyects
+<----------------------------------------------------->
+*/
+
+.animcard{
+  margin: 4rem 0; 
+  transition: all .2s;
+  text-shadow: 1.5px 1px 1px var(--dark);
+  color: var(--light);
+  position: relative;
+}
+.animcard:hover{
+  transform: scale(1.1) rotate(2deg);
+}
+.animcard p{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .2s;
+}
+.animcard p:hover{
+  opacity: 1;
+}
+.animcard i{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+.animcard:hover img{
+  box-shadow: -1px 0 5px var(--color3), 0 1px 5px var(--color3), 1px 0 5px var(--color3), 0 -1px 5px var(--color3);
+}
+.animcard img{
+  width: 100%;
+  transition: all .2s;
+}
+.minivideo iframe{
+  margin: 4rem 0; 
+  width: 100%;
+}
+
+/*
+<----------------------------------------------------->
+  Slideshows
+<----------------------------------------------------->
+*/
+
+.mySlides {
+  position: absolute;
+  width: 100%;
+  display: block;
+  transition: all 1s;
+}
+.mySlides img {
+  vertical-align: middle;
+  width: 100%;
+}
+.slideshow-container {
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: calc(100vw * 0.5625);
+}
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+.dot {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+.active {
+background-color: #717171;
+}
+/* Animaciones */
+.entry{
+-webkit-animation: in 1.5s forwards;
+animation: in 1.5s forwards;
+}
+.exit{
+-webkit-animation: out 1.5s forwards;
+animation: out 1.5s forwards;
+}
+
+@keyframes in {
+from {transform: translateX(100%);display: block;}
+to {transform: translateX(0);display: none;}
+}
+@keyframes out {
+from {transform: translateX(0);}
+to {transform: translateX(-100%);}
+}
+
+/*
+<----------------------------------------------------->
+  Footer
+<----------------------------------------------------->
+*/
+
+footer{
+  background-color: var(--color1);
+}
+.LetterHover{
+  
+  padding: 5% 5% 1% 5%;
+  font-weight: 900;
+}
+.LetterHover p{
+  font-family: 'Righteous', cursive;
+  transition: all .1s;
+  font-size: xx-large;
+  margin: 0% .2%;
+}
+
+@media only screen and (max-width: 768px) {
+  .LetterHover p{
+    font-size: medium;
+  }
+}
+
+.Saltarin{
+  transform: translateY(-30%);
+  color: var(--color4) !important;
+}
+.SemiSaltarin{
+  transform: translateY(-15%);
+  color: #f5a4a4 !important;
+}
