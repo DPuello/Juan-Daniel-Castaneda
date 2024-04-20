@@ -196,6 +196,13 @@ header{
     padding: 10%;
     font-size: 1.7rem;
 }
+.intro .contact{
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
 @media only screen and (max-width: 768px) {
   .intro{
     font-size: 1rem;
